@@ -1,12 +1,12 @@
 FROM microsoft/windowsservercore 
 
-MAINTAINER azcii
+MAINTAINER jacobbraun
 
 # Download the needed files
 ADD http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211999 C:/Downloads/jre-8u101-windows-x64.exe
 ADD http://javadl.oracle.com/webapps/download/AutoDL?BundleId=211997 C:/Downloads/jre-8u101-windows-i586.exe
 ADD http://www.7-zip.org/a/7z1604-x64.exe C:/Downloads/7z1604-x64.exe
-ADD http://dl.ubnt.com/unifi/5.2.9/UniFi-installer.exe C:/Downloads/UniFi-installer.exe
+ADD http://dl.ubnt.com/unifi/5.7.8-5204056bce/UniFi-installer.exe C:/Downloads/UniFi-installer.exe
 
 # Installing Java
 RUN powershell start-process -filepath C:\Downloads\jre-8u101-windows-x64.exe -passthru -wait -argumentlist "/s,INSTALLDIR=c:\Java\jre1.8.0_101-x64,/L,install64.log"
